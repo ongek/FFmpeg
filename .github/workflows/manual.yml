@@ -3,7 +3,7 @@ run-name: testing
 on: [workflow_dispatch]
 jobs:
   build:
-    runs-on: macos-13-xlarge
+    runs-on: macos-latest
     steps:
       - run: sudo powermetrics
       - run: xcode-select --install
