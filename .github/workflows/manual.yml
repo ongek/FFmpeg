@@ -8,6 +8,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: ls -l
       - run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+      - run: brew fetch --force --bottle-tag=arm64_big_sur boost
       - run: brew install automake fdk-aac git lame libass libtool libvorbis libvpx opus sdl shtool texi2html theora wget x264 x265 xvid nasm
       - run: ./configure --arch=aarch64 --target-os=darwin --prefix=/usr/local --enable-gpl --enable-nonfree --enable-libass --enable-libfdk-aac --enable-libfreetype --enable-libmp3lame --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-libopus --enable-libxvid --samples=fate-suite
       - run: make
